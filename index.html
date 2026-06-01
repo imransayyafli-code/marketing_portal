@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketinq Departamenti — Baku Electronics</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --red: #E01E2A;
+    --red-dark: #B81520;
+    --red-light: #ff3b47;
+    --slate: #0f1923;
+    --slate-mid: #1a2533;
+    --slate-soft: #243044;
+    --white: #ffffff;
+    --off-white: #f7f6f4;
+    --muted: #8a97a8;
+    --border: rgba(255,255,255,0.07);
+    --card-bg: #141e2b;
+    --card-hover: #1c2a3a;
+    --gradient-1: linear-gradient(135deg, #e01e2a, #ff6b35);
+    --gradient-2: linear-gradient(135deg, #1a2533, #243044);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--slate);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── BACKGROUND TEXTURE ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 10% 0%, rgba(224,30,42,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 90% 100%, rgba(224,30,42,0.05) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: relative;
+    z-index: 10;
+    padding: 0 60px;
+    background: rgba(15,25,35,0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    position: sticky;
+    top: 0;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .logo-badge {
+    width: 36px; height: 36px;
+    background: var(--red);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(224,30,42,0.4);
+  }
+  .logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    color: var(--white);
+  }
+  .logo-text span { color: var(--red); }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .dept-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    z-index: 1;
+    padding: 80px 60px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--red);
+    border-radius: 2px;
+  }
+
+  .hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--red);
+    position: relative;
+  }
+
+  .hero-sub {
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 48px;
+    max-width: 480px;
+    line-height: 1.7;
+  }
+
+  .stats-row {
+    display: flex;
+    gap: 48px;
+    margin-bottom: 0;
+  }
+  .stat { display: flex; flex-direction: column; gap: 4px; }
+  .stat-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    color: var(--white);
+    line-height: 1;
+  }
+  .stat-number span { color: var(--red); }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTROLS ── */
+  .controls-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px 48px;
+  }
+
+  .controls-inner {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Search */
+  .search-row { display: flex; align-items: center; gap: 16px; }
+  .search-box {
+    position: relative;
+    flex: 1;
+    max-width: 420px;
+  }
+  .search-box i {
+    position: absolute;
+    left: 16px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 13px;
+    pointer-events: none;
+  }
+  .search-box input {
+    width: 100%;
+    background: var(--slate-mid);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 16px 12px 42px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .search-box input::placeholder { color: var(--muted); }
+  .search-box input:focus {
+    border-color: rgba(224,30,42,0.5);
+    box-shadow: 0 0 0 3px rgba(224,30,42,0.08);
+  }
+
+  .result-count {
+    font-size: 13px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .result-count strong { color: var(--white); font-weight: 600; }
+
+  /* Filters */
+  .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .filter-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-right: 4px;
+  }
+  .filter-btn {
+    padding: 7px 16px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .filter-btn:hover {
+    border-color: rgba(224,30,42,0.4);
+    color: var(--white);
+    background: rgba(224,30,42,0.06);
+  }
+  .filter-btn.active {
+    background: var(--red);
+    border-color: var(--red);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(224,30,42,0.35);
+  }
+
+  /* ── GRID ── */
+  .grid-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px 100px;
+  }
+
+  /* Section dividers */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    margin-top: 16px;
+  }
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    white-space: nowrap;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .section-count {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 16px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s, border-color 0.25s, opacity 0.3s;
+    position: relative;
+    animation: fadeUp 0.4s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(224,30,42,0.2);
+    border-color: rgba(224,30,42,0.25);
+  }
+  .card.hidden { display: none; }
+
+  /* Photo area */
+  .card-photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/3.5;
+    overflow: hidden;
+    background: var(--slate-mid);
+  }
+  .card-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .card:hover .card-photo img { transform: scale(1.06); }
+
+  /* Avatar fallback */
+  .card-avatar {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    letter-spacing: -1px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  /* Hover overlay */
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(12,18,27,0.98) 0%, rgba(12,18,27,0.7) 50%, rgba(224,30,42,0.15) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px 18px;
+    gap: 10px;
+  }
+  .card:hover .card-overlay { opacity: 1; }
+
+  .overlay-info { display: flex; flex-direction: column; gap: 8px; }
+  .overlay-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 8px 12px;
+    backdrop-filter: blur(8px);
+    transform: translateY(8px);
+    transition: transform 0.3s ease 0.05s, opacity 0.3s ease 0.05s;
+    opacity: 0;
+  }
+  .card:hover .overlay-row {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .card:hover .overlay-row:nth-child(2) { transition-delay: 0.1s; }
+  .overlay-row-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+  }
+  .overlay-row i {
+    color: var(--red);
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  .overlay-text {
+    font-size: 11px;
+    color: var(--off-white);
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .copy-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 11px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: color 0.15s, background 0.15s;
+    flex-shrink: 0;
+  }
+  .copy-btn:hover { color: var(--red); background: rgba(224,30,42,0.1); }
+  .copy-btn.copied { color: #4ade80; }
+
+  /* Red top accent */
+  .card-photo::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .card:hover .card-photo::after { transform: scaleX(1); }
+
+  /* Card body */
+  .card-body {
+    padding: 16px 16px 18px;
+    border-top: 1px solid var(--border);
+  }
+  .card-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 5px;
+  }
+  .card-role {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--red);
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+  }
+  .card-dept-tag {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 3px 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+  }
+
+  /* ── DIRECTOR CARD (special) ── */
+  .director-grid {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 0;
+  }
+  .director-card {
+    background: linear-gradient(135deg, #1a2030 0%, #1f2b3e 100%);
+    border: 1px solid rgba(224,30,42,0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 0;
+    position: relative;
+    flex: 0 0 auto;
+    width: 420px;
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: pointer;
+  }
+  .director-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(224,30,42,0.3);
+  }
+  .director-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--red);
+    border-radius: 0 2px 2px 0;
+  }
+  .director-photo {
+    width: 120px; height: 140px;
+    object-fit: cover;
+    object-position: center top;
+    flex-shrink: 0;
+    display: block;
+  }
+  .director-avatar {
+    width: 120px; height: 140px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    color: #fff;
+  }
+  .director-info { padding: 20px 24px 20px 8px; }
+  .director-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(224,30,42,0.12);
+    border: 1px solid rgba(224,30,42,0.25);
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .director-badge i { font-size: 8px; }
+  .director-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .director-role {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .director-contacts { display: flex; flex-direction: column; gap: 6px; }
+  .director-contact-row {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .director-contact-row i { color: var(--red); font-size: 11px; width: 14px; }
+  .director-contact-row span {
+    font-size: 11px;
+    color: var(--off-white);
+  }
+
+  /* ── EMPTY STATE ── */
+  .empty-state {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+    color: var(--muted);
+    gap: 16px;
+  }
+  .empty-state i { font-size: 48px; color: rgba(255,255,255,0.08); }
+  .empty-state p { font-size: 15px; }
+  .empty-state.visible { display: flex; }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    background: #1c2a3a;
+    border: 1px solid rgba(74,222,128,0.3);
+    color: #4ade80;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex; align-items: center; gap: 8px;
+    transform: translateY(60px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    z-index: 9999;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    pointer-events: none;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  /* ── SCROLL BAR ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--slate); }
+  ::-webkit-scrollbar-thumb { background: var(--slate-soft); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--red); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    header { padding: 0 20px; }
+    .hero, .controls-wrap, .grid-wrap { padding-left: 20px; padding-right: 20px; }
+    .hero { padding-top: 48px; padding-bottom: 32px; }
+    .stats-row { gap: 28px; }
+    .director-card { width: 100%; }
+    .cards-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-area">
+    <div class="logo-badge">BE</div>
+    <div class="logo-text">Baku <span>Electronics</span></div>
+  </div>
+  <div class="header-right">
+    <span class="dept-label"><i class="fa fa-chart-line" style="margin-right:6px;color:var(--red);"></i>Marketinq Departamenti</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Daxili Komanda Portalı</div>
+  <h1>Marketinq<br><em>Departamenti</em></h1>
+  <p class="hero-sub">Baku Electronics-in marketinq komandası — brendin səsi, böyüməsinin mühərriki.</p>
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-number" id="stat-total">39<span>+</span></div>
+      <div class="stat-label">Əməkdaş</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">7<span>+</span></div>
+      <div class="stat-label">Şöbə</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">1</div>
+      <div class="stat-label">Komanda</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTROLS -->
+<div class="controls-wrap">
+  <div class="controls-inner">
+    <div class="search-row">
+      <div class="search-box">
+        <i class="fa fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Ad və ya vəzifə ilə axtar…">
+      </div>
+      <div class="result-count" id="resultCount"><strong id="countNum">39</strong> nəfər</div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Şöbə:</span>
+      <button class="filter-btn active" data-filter="all">Hamısı</button>
+      <button class="filter-btn" data-filter="Rəhbərlik">Rəhbərlik</button>
+      <button class="filter-btn" data-filter="PM Unit">PM Unit</button>
+      <button class="filter-btn" data-filter="Growth Unit">Growth Unit</button>
+      <button class="filter-btn" data-filter="Marketinq Kommunikasiyaları">Kommunikasiyalar</button>
+      <button class="filter-btn" data-filter="SMM Qrupu">SMM Qrupu</button>
+      <button class="filter-btn" data-filter="Dizayn Şöbəsi">Dizayn Şöbəsi</button>
+      <button class="filter-btn" data-filter="Motion & Copywriting">Motion & Copy</button>
+      <button class="filter-btn" data-filter="CRM Şöbəsi">CRM Şöbəsi</button>
+    </div>
+  </div>
+</div>
+
+<!-- GRID -->
+<div class="grid-wrap" id="gridWrap">
+  <div class="empty-state" id="emptyState">
+    <i class="fa fa-user-slash"></i>
+    <p>Heç bir nəticə tapılmadı</p>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><i class="fa fa-check"></i> Kopyalandı!</div>
+
+<script>
+// ═══════════════════════════════════════════════
+// TEAM DATA
+// ═══════════════════════════════════════════════
+const TEAM = [
+  // ── Rəhbərlik ──
+  { name: "Aslan Həsənli",     dept: "Rəhbərlik",                  role: "Departament Direktoru",      phone: "Daxili: 101",  email: "a.hasanli@bakuelectronics.az",       photo: "" },
+
+  // ── PM Unit ──
+  { name: "Nəzrin İmaməliyeva",dept: "PM Unit",                     role: "Şöbə Müdiri",                phone: "Daxili: 210",  email: "n.imamaliyeva@bakuelectronics.az",   photo: "" },
+  { name: "Ayla İsmayılzadə",  dept: "PM Unit",                     role: "Baş Menecer",                phone: "Daxili: 211",  email: "a.ismayilzade@bakuelectronics.az",   photo: "" },
+  { name: "Səadət Ağabalayeva",dept: "PM Unit",                     role: "Menecer",                    phone: "Daxili: 212",  email: "s.agabalayeva@bakuelectronics.az",   photo: "" },
+  { name: "Sevil Qədirova",    dept: "PM Unit",                     role: "Kiçik Menecer",              phone: "Daxili: 213",  email: "s.qadirova@bakuelectronics.az",      photo: "" },
+  { name: "Jalə Balayeva",     dept: "PM Unit",                     role: "Koordinator",                phone: "Daxili: 214",  email: "j.balayeva@bakuelectronics.az",      photo: "" },
+  { name: "Leyla Həsənova",    dept: "PM Unit",                     role: "Seven Space — Brend Menecer",phone: "Daxili: 215",  email: "l.hasanova@bakuelectronics.az",      photo: "" },
+  { name: "Emil Nəcəfli",      dept: "PM Unit",                     role: "MotoVerse — Brend Menecer",  phone: "Daxili: 216",  email: "e.nacafli@bakuelectronics.az",       photo: "" },
+
+  // ── Growth Unit ──
+  { name: "Ərtunc Behbudlu",   dept: "Growth Unit",                 role: "Şöbə Rəhbəri",              phone: "Daxili: 310",  email: "e.behbudlu@bakuelectronics.az",      photo: "" },
+  { name: "Aytəkin Salmanova", dept: "Growth Unit",                 role: "Baş Mütəxəssis",            phone: "Daxili: 311",  email: "a.salmanova@bakuelectronics.az",     photo: "" },
+  { name: "Qərənfil Yaqubova", dept: "Growth Unit",                 role: "Baş Mütəxəssis",            phone: "Daxili: 312",  email: "q.yaqubova@bakuelectronics.az",      photo: "" },
+  { name: "Nicat Rəşidli",     dept: "Growth Unit",                 role: "Mütəxəssis",                phone: "Daxili: 313",  email: "n.rashidli@bakuelectronics.az",      photo: "" },
+  { name: "Emin Əzimov",       dept: "Growth Unit",                 role: "Mütəxəssis",                phone: "Daxili: 314",  email: "e.azimov@bakuelectronics.az",        photo: "" },
+
+  // ── Marketinq Kommunikasiyaları ──
+  { name: "Nigar Mehdiyeva",   dept: "Marketinq Kommunikasiyaları", role: "Şöbə Rəhbəri",              phone: "Daxili: 410",  email: "n.mehdiyeva@bakuelectronics.az",     photo: "" },
+  { name: "İmran Səyyaflı",    dept: "Marketinq Kommunikasiyaları", role: "Baş Mütəxəssis",            phone: "Daxili: 411",  email: "i.sayyafli@bakuelectronics.az",      photo: "" },
+  { name: "Nərmin Aşırzadə",   dept: "Marketinq Kommunikasiyaları", role: "Aparıcı Mütəxəssis",        phone: "Daxili: 412",  email: "n.ashirzade@bakuelectronics.az",     photo: "" },
+  { name: "Orxan Məmməzadə",   dept: "Marketinq Kommunikasiyaları", role: "Aparıcı Mütəxəssis",        phone: "Daxili: 413",  email: "o.mammadzade@bakuelectronics.az",    photo: "" },
+  { name: "Nərgiz Qurbanova",  dept: "Marketinq Kommunikasiyaları", role: "Mütəxəssis",                phone: "Daxili: 414",  email: "n.qurbanova@bakuelectronics.az",     photo: "" },
+  { name: "Səmayə İbrahimli",  dept: "Marketinq Kommunikasiyaları", role: "Kiçik Mütəxəssis",          phone: "Daxili: 415",  email: "s.ibrahimli@bakuelectronics.az",     photo: "" },
+
+  // ── SMM Qrupu ──
+  { name: "Könül Həsənova",    dept: "SMM Qrupu",                   role: "Qrup Rəhbəri",              phone: "Daxili: 510",  email: "k.hasanova@bakuelectronics.az",      photo: "" },
+  { name: "Almaz Məmmədli",    dept: "SMM Qrupu",                   role: "Mütəxəssis",                phone: "Daxili: 511",  email: "a.mammadli@bakuelectronics.az",      photo: "" },
+  { name: "Gülnur Hüseynova",  dept: "SMM Qrupu",                   role: "Təcrübəçi",                 phone: "Daxili: 512",  email: "g.huseynova@bakuelectronics.az",     photo: "" },
+  { name: "Kamil Tukanov",     dept: "SMM Qrupu",                   role: "Təcrübəçi",                 phone: "Daxili: 513",  email: "k.tukanov@bakuelectronics.az",       photo: "" },
+
+  // ── Dizayn Şöbəsi ──
+  { name: "Nigar Rüstəmova",   dept: "Dizayn Şöbəsi",               role: "Şöbə Rəhbəri",              phone: "Daxili: 610",  email: "n.rustamova@bakuelectronics.az",     photo: "" },
+  { name: "Rəsul Azəroğlu",    dept: "Dizayn Şöbəsi",               role: "Baş Qrafik Dizayner",       phone: "Daxili: 611",  email: "r.azaroglu@bakuelectronics.az",      photo: "" },
+  { name: "Nicat Alməmmədov",  dept: "Dizayn Şöbəsi",               role: "Aparıcı Dizayner",          phone: "Daxili: 612",  email: "n.almammadov@bakuelectronics.az",    photo: "" },
+  { name: "Günel Nəsibova",    dept: "Dizayn Şöbəsi",               role: "Aparıcı Dizayner",          phone: "Daxili: 613",  email: "g.nasibova@bakuelectronics.az",      photo: "" },
+  { name: "Aytən Cabbarova",   dept: "Dizayn Şöbəsi",               role: "Qrafik Dizayner",           phone: "Daxili: 614",  email: "a.jabbarova@bakuelectronics.az",     photo: "" },
+  { name: "Saray Quliyeva",    dept: "Dizayn Şöbəsi",               role: "Kiçik Dizayner",            phone: "Daxili: 615",  email: "s.quliyeva@bakuelectronics.az",      photo: "" },
+  { name: "Aysun Xəlilova",    dept: "Dizayn Şöbəsi",               role: "Kiçik Dizayner",            phone: "Daxili: 616",  email: "a.xalilova@bakuelectronics.az",      photo: "" },
+
+  // ── Motion & Copywriting ──
+  { name: "(Vakant)",           dept: "Motion & Copywriting",        role: "Baş Motion Dizayner",       phone: "",             email: "",                                   photo: "" },
+  { name: "Elvar Ağayev",      dept: "Motion & Copywriting",        role: "Motion Dizayner",           phone: "Daxili: 711",  email: "e.agayev@bakuelectronics.az",        photo: "" },
+  { name: "Zeyd Sadıqov",      dept: "Motion & Copywriting",        role: "Baş Copywriter",            phone: "Daxili: 712",  email: "z.sadiqov@bakuelectronics.az",       photo: "" },
+  { name: "Aytac Qasımova",    dept: "Motion & Copywriting",        role: "Kopirayter",                phone: "Daxili: 713",  email: "a.qasimova@bakuelectronics.az",      photo: "" },
+  { name: "Həsən Həsənov",     dept: "Motion & Copywriting",        role: "Kiçik Copywriter",          phone: "Daxili: 714",  email: "h.hasanov@bakuelectronics.az",       photo: "" },
+
+  // ── CRM Şöbəsi ──
+  { name: "Aydan Şahəliyeva",  dept: "CRM Şöbəsi",                  role: "CRM Mütəxəssis",            phone: "Daxili: 810",  email: "a.shahaliyeva@bakuelectronics.az",   photo: "" },
+  { name: "Simuzər İsmətzadə", dept: "CRM Şöbəsi",                  role: "CRM Analitik",              phone: "Daxili: 811",  email: "s.ismatzade@bakuelectronics.az",     photo: "" },
+  { name: "Ləman Həsənova",    dept: "CRM Şöbəsi",                  role: "Kiçik Mütəxəssis",          phone: "Daxili: 812",  email: "l.hasanova@bakuelectronics.az",      photo: "" },
+  { name: "Esmira Əhmədova",   dept: "CRM Şöbəsi",                  role: "Junior Analitik",           phone: "Daxili: 813",  email: "e.ahmadova@bakuelectronics.az",      photo: "" },
+];
+
+// Gradient palettes for avatars
+const AVATAR_GRADIENTS = [
+  ['#E01E2A','#ff6b35'],['#1a7fe0','#00c4ff'],['#7c3aed','#a855f7'],
+  ['#059669','#10b981'],['#d97706','#f59e0b'],['#0f766e','#14b8a6'],
+  ['#be185d','#ec4899'],['#1d4ed8','#3b82f6'],['#92400e','#d97706'],
+  ['#065f46','#059669'],['#581c87','#7c3aed'],['#991b1b','#ef4444'],
+];
+
+function getInitials(name) {
+  if (!name || name === '(Vakant)') return '?';
+  const parts = name.trim().split(/\s+/);
+  return parts.slice(0,2).map(p => p[0]).join('').toUpperCase();
+}
+function getGradient(name) {
+  let hash = 0;
+  for (let c of name) hash = (hash * 31 + c.charCodeAt(0)) & 0xffff;
+  return AVATAR_GRADIENTS[hash % AVATAR_GRADIENTS.length];
+}
+function avatarStyle(name) {
+  const [a,b] = getGradient(name);
+  return `background: linear-gradient(135deg, ${a}, ${b});`;
+}
+
+// ── BUILD DIRECTOR CARD ──
+function buildDirectorCard(p) {
+  const initials = getInitials(p.name);
+  const photoHtml = p.photo
+    ? `<img class="director-photo" src="${p.photo}" alt="${p.name}" onerror="this.style.display='none';this.nextSibling.style.display='flex';">
+       <div class="director-avatar" style="${avatarStyle(p.name)};display:none;">${initials}</div>`
+    : `<div class="director-avatar" style="${avatarStyle(p.name)}">${initials}</div>`;
+
+  const phoneRow = p.phone ? `
+    <div class="director-contact-row">
+      <i class="fa fa-phone"></i><span>${p.phone}</span>
+    </div>` : '';
+  const emailRow = p.email ? `
+    <div class="director-contact-row">
+      <i class="fa fa-envelope"></i><span>${p.email}</span>
+    </div>` : '';
+
+  return `
+    <div class="director-card card" data-dept="${p.dept}" data-name="${p.name}" data-role="${p.role}">
+      ${photoHtml}
+      <div class="director-info">
+        <div class="director-badge"><i class="fa fa-star"></i> Rəhbər</div>
+        <div class="director-name">${p.name}</div>
+        <div class="director-role">${p.role}</div>
+        <div class="director-contacts">
+          ${phoneRow}${emailRow}
+        </div>
+      </div>
+    </div>`;
+}
+
+// ── BUILD REGULAR CARD ──
+function buildCard(p, delay) {
+  const initials = getInitials(p.name);
+  const isVacant = p.name === '(Vakant)';
+  const photoHtml = (!isVacant && p.photo)
+    ? `<img src="${p.photo}" alt="${p.name}" onerror="this.style.display='none';this.nextSibling.style.display='flex';">
+       <div class="card-avatar" style="${avatarStyle(p.name)};display:none;">${initials}</div>`
+    : `<div class="card-avatar" style="${isVacant ? 'background:rgba(255,255,255,0.04);' : avatarStyle(p.name)}">${isVacant ? '<i class="fa fa-plus" style="opacity:0.3;font-size:28px;"></i>' : initials}</div>`;
+
+  const copyPhone = p.phone ? `<button class="copy-btn" onclick="copyText(event,'${p.phone}')"><i class="fa fa-copy"></i></button>` : '';
+  const copyEmail = p.email ? `<button class="copy-btn" onclick="copyText(event,'${p.email}')"><i class="fa fa-copy"></i></button>` : '';
+
+  const overlayPhone = p.phone ? `
+    <div class="overlay-row">
+      <div class="overlay-row-left"><i class="fa fa-phone"></i><span class="overlay-text">${p.phone}</span></div>
+      ${copyPhone}
+    </div>` : '';
+  const overlayEmail = p.email ? `
+    <div class="overlay-row">
+      <div class="overlay-row-left"><i class="fa fa-envelope"></i><span class="overlay-text">${p.email}</span></div>
+      ${copyEmail}
+    </div>` : '';
+
+  return `
+    <div class="card" data-dept="${p.dept}" data-name="${p.name}" data-role="${p.role}" style="animation-delay:${delay}ms;">
+      <div class="card-photo">
+        ${photoHtml}
+        <div class="card-overlay">
+          <div class="overlay-info">
+            ${overlayPhone}${overlayEmail}
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">${p.name}</div>
+        <div class="card-role">${p.role}</div>
+        <div class="card-dept-tag">${p.dept}</div>
+      </div>
+    </div>`;
+}
+
+// ── RENDER ──
+const DEPT_ORDER = [
+  "Rəhbərlik",
+  "PM Unit",
+  "Growth Unit",
+  "Marketinq Kommunikasiyaları",
+  "SMM Qrupu",
+  "Dizayn Şöbəsi",
+  "Motion & Copywriting",
+  "CRM Şöbəsi",
+];
+
+function render(filter = 'all', search = '') {
+  const grid = document.getElementById('gridWrap');
+  const empty = document.getElementById('emptyState');
+  grid.querySelectorAll('.section-wrapper,.director-grid').forEach(e => e.remove());
+
+  const q = search.trim().toLowerCase();
+  const filtered = TEAM.filter(p => {
+    const matchDept = filter === 'all' || p.dept === filter;
+    const matchSearch = !q || p.name.toLowerCase().includes(q) || p.role.toLowerCase().includes(q) || p.dept.toLowerCase().includes(q);
+    return matchDept && matchSearch;
+  });
+
+  document.getElementById('countNum').textContent = filtered.length;
+
+  if (filtered.length === 0) {
+    empty.classList.add('visible');
+    return;
+  }
+  empty.classList.remove('visible');
+
+  // Group by dept (in order)
+  const groups = {};
+  DEPT_ORDER.forEach(d => { groups[d] = []; });
+  filtered.forEach(p => { if (groups[p.dept]) groups[p.dept].push(p); });
+
+  let totalDelay = 0;
+  DEPT_ORDER.forEach(dept => {
+    const members = groups[dept];
+    if (!members.length) return;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'section-wrapper';
+
+    // Section header
+    const sh = document.createElement('div');
+    sh.className = 'section-header';
+    sh.innerHTML = `
+      <div class="section-title">${dept}</div>
+      <div class="section-line"></div>
+      <div class="section-count">${members.length} nəfər</div>`;
+    wrapper.appendChild(sh);
+
+    if (dept === 'Rəhbərlik') {
+      const dg = document.createElement('div');
+      dg.className = 'director-grid';
+      dg.style.marginBottom = '16px';
+      members.forEach(p => { dg.innerHTML += buildDirectorCard(p); });
+      wrapper.appendChild(dg);
+    } else {
+      const cg = document.createElement('div');
+      cg.className = 'cards-grid';
+      members.forEach(p => {
+        cg.innerHTML += buildCard(p, totalDelay);
+        totalDelay += 40;
+      });
+      wrapper.appendChild(cg);
+    }
+
+    grid.insertBefore(wrapper, empty);
+  });
+}
+
+// ── FILTERS & SEARCH ──
+let currentFilter = 'all';
+let currentSearch = '';
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    render(currentFilter, currentSearch);
+  });
+});
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  currentSearch = e.target.value;
+  render(currentFilter, currentSearch);
+});
+
+// ── COPY ──
+function copyText(e, text) {
+  e.stopPropagation();
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = e.currentTarget;
+    btn.classList.add('copied');
+    btn.innerHTML = '<i class="fa fa-check"></i>';
+    setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = '<i class="fa fa-copy"></i>'; }, 1500);
+
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    clearTimeout(toast._t);
+    toast._t = setTimeout(() => toast.classList.remove('show'), 2000);
+  });
+}
+
+// ── INIT ──
+render();
+</script>
+</body>
+</html>
